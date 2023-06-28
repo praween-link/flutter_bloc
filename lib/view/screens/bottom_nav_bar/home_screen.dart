@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:my_shop/bloc/bloc.dart';
+import 'package:my_shop/cubit/cubit.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -10,7 +10,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       body: Center(
-        child: BlocConsumer<InternetBloc, InternetState>(
+        child: BlocConsumer<InternetCubit, InternetState>(
           builder: (context, state) {
             if (state is InternetGainedState) {
               return const Text("Connected!");
